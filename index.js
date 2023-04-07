@@ -37,12 +37,12 @@ window.onload = function () {
       appendTens.innerHTML = "0" + mili;
     }
     
-    else if (mili > 9){
+    if (mili > 9){
       appendTens.innerHTML = mili;
       
     } 
     
-    else if (mili > 99) {
+    if (mili > 99) {
       console.log("seconds");
       seconds++;
       appendSeconds.innerHTML = "0" + seconds;
@@ -50,7 +50,7 @@ window.onload = function () {
       appendTens.innerHTML = "0" + 0;
     }
     
-    else if (seconds > 9){
+    if (seconds > 9){
       appendSeconds.innerHTML = seconds;
     }
   
