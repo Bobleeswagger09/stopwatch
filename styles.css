@@ -1,7 +1,7 @@
 /*this var are used to apply colors constitently throughout my style*/
 /*mixins allow u 2 define styles that can be used throughout your styles sheet*/
 body {
-  background-color: #ffa600;
+  background-color: #245953;
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
 }
@@ -20,14 +20,14 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
-#seconds, #tens {
+#seconds, #mili {
   font-size: 2em;
 }
 
 button {
   border-radius: 5px;
   -khtml-border-radius: 5px;
-  background: #ffa600;
+  background: #245953;
   color: #fff;
   border: solid 1px #fff;
   text-decoration: none;
@@ -44,6 +44,6 @@ button:hover {
   transition: all 0.5s ease-in-out;
   background: #fff;
   border: solid 1px #fff;
-  color: #ffa600;
+  color: #245953;
 }
 /*# sourceMappingURL=styles.css.map */

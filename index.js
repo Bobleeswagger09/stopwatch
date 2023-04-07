@@ -1,63 +1,60 @@
-//this is triggered when the page finishes loading
-
 window.onload = function () {
   
-    let seconds = 00; 
-    let tens = 00; 
-    var appendTens = document.getElementById("tens")
-    var appendSeconds = document.getElementById("seconds")
-    var buttonStart = document.getElementById('button-start');
-    var buttonStop = document.getElementById('button-stop');
-    var buttonReset = document.getElementById('button-reset');
-    //decleared a var called interval
-    let Interval ;
-  
-    buttonStart.onclick = function() {
-      
-      clearInterval(Interval);
-       Interval = setInterval(startTimer, 10);
-    }
+  let seconds = 00; 
+  let mili = 00; 
+  let appendTens = document.getElementById("mili")
+  let appendSeconds = document.getElementById("seconds")
+  let buttonStart = document.getElementById('button-start');
+  let buttonStop = document.getElementById('button-stop');
+  let buttonReset = document.getElementById('button-reset');
+  let Interval ;
+
+  buttonStart.onclick = function() {
     
-      buttonStop.onclick = function() {
-         clearInterval(Interval);
-    }
-    
+    clearInterval(Interval);
+     Interval = setInterval(startTimer, 10);
+  }
   
-    buttonReset.onclick = function() {
+    buttonStop.onclick = function() {
        clearInterval(Interval);
-      tens = "00";
-      seconds = "00";
-      appendTens.innerHTML = tens;
-        appendSeconds.innerHTML = seconds;
+  }
+  
+
+  buttonReset.onclick = function() {
+     clearInterval(Interval);
+    mili = "00";
+  	seconds = "00";
+    appendTens.innerHTML = mili;
+  	appendSeconds.innerHTML = seconds;
+  }
+  
+   
+  
+  function startTimer () {
+    mili++; 
+    
+    if(mili <= 9){
+      appendTens.innerHTML = "0" + mili;
     }
     
-     
+    else if (mili > 9){
+      appendTens.innerHTML = mili;
+      
+    } 
     
-    function startTimer () {
-      tens++; 
-      
-      if(tens <= 9){
-        appendTens.innerHTML = "0" + tens;
-      }
-      
-      if (tens > 9){
-        appendTens.innerHTML = tens;
-        
-      } 
-      
-      if (tens > 99) {
-        console.log("seconds");
-        seconds++;
-        appendSeconds.innerHTML = "0" + seconds;
-        tens = 0;
-        appendTens.innerHTML = "0" + 0;
-      }
-      
-      if (seconds > 9){
-        appendSeconds.innerHTML = seconds;
-      }
-    
+    else if (mili > 99) {
+      console.log("seconds");
+      seconds++;
+      appendSeconds.innerHTML = "0" + seconds;
+      mili = 0;
+      appendTens.innerHTML = "0" + 0;
     }
     
+    else if (seconds > 9){
+      appendSeconds.innerHTML = seconds;
+    }
   
   }
+  
+
+}
